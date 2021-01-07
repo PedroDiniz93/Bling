@@ -14,6 +14,8 @@
 ## Sobre
 Modulo possibilita a criação de pedidos e nfe na bling.
 
+O módulo observa 2 eventos (criação de pedido e criação de invoice) após ser criado realiza a requisição ao bling.
+
 ---
 
 ## Instalação (Como instalar o módulo)
