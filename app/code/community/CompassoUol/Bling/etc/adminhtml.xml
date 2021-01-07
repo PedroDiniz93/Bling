@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <bling>
+            <title>Módulo Bling</title>
+            <sort_order>99</sort_order>
+            <children>
+                <orders module="bling">
+                    <title>Pedidos bling</title>
+                    <sort_order>5</sort_order>
+                    <action>adminhtml/Bling_orders</action>
+                </orders>
+                <config translate="title">
+                    <title>Configurações</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/system_config/edit/section/bling</action>
+                </config>
+            </children>
+        </bling>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <bling>
+                        <title>Módulo Bling</title>
+                        <sort_order>99</sort_order>
+                        <children>
+                            <orders module="bling">
+                                <title>Pedidos bling</title>
+                                <sort_order>5</sort_order>
+                            </orders>
+                            <config translate="title">
+                                <title>Configurações</title>
+                                <sort_order>10</sort_order>
+                            </config>
+                        </children>
+                    </bling>
+                </children>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <bling>
+                                        <title>Módulo Bling</title>
+                                    </bling>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

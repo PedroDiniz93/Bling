@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <bling translate="label">
+            <label>Módulo Bling</label>
+            <sort_order>50</sort_order>
+        </bling>
+    </tabs>
+    <sections>
+        <bling translate="label" module="bling">
+            <label>Configurações Bling</label>
+            <tab>bling</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Ativo</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Adminhtml/System_Config_Source_Yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <environment>
+                            <label>Ambiente</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bling/source_config_environment</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </environment>
+                        <token translate="label">
+                            <label>Token</label>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <environment>production</environment>
+                            </depends>
+                        </token>
+                        <token_sandbox translate="label">
+                            <label>Token Sandbox</label>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <environment>sandbox</environment>
+                            </depends>
+                        </token_sandbox>
+                        <auto_nfe translate="label">
+                            <label>Gerar Nota fiscal Automatico</label>
+                            <sort_order>15</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Adminhtml/System_Config_Source_Yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <active>1</active>
+                            </depends>
+                            <comment>
+                                Ao gerar pedido pelo bling vai ser gerado automaticamente a nfe
+                            </comment>
+                        </auto_nfe>
+                    </fields>
+                </general>
+            </groups>
+        </bling>
+    </sections>
+</config>

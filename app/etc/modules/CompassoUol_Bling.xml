@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <CompassoUol_Bling>
+            <active>true</active>
+            <codePool>community</codePool>
+        </CompassoUol_Bling>
+    </modules>
+</config>

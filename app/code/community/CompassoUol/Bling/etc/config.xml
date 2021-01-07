@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <CompassoUol_Bling>
+            <version>1.0.0</version>
+        </CompassoUol_Bling>
+    </modules>
+    <!-- R O U T E R S -->
+    <!-- F R O N T E N D -->
+    <frontend>
+        <routers>
+            <bling>
+                <use>standard</use>
+                <args>
+                    <module>CompassoUol_Bling</module>
+                    <frontName>bling</frontName>
+                </args>
+            </bling>
+        </routers>
+    </frontend>
+    <!-- F R O N T E N D -->
+    <!-- A D M I N -->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <bling before="Mage_Adminhtml">CompassoUol_Bling_Adminhtml</bling>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <!-- A D M I N -->
+    <!-- R O U T E R S -->
+
+    <!-- G L O B A L S -->
+    <global>
+        <models>
+            <bling>
+                <class>CompassoUol_Bling_Model</class>
+                <resourceModel>bling_resources</resourceModel>
+            </bling>
+            <bling_resources>
+                <class>CompassoUol_Bling_Model_Resources</class>
+                <entities>
+                    <orders>
+                        <table>bling_orders</table>
+                    </orders>
+                </entities>
+            </bling_resources>
+        </models>
+        <blocks>
+            <bling>
+                <class>CompassoUol_Bling_Block</class>
+            </bling>
+        </blocks>
+        <helpers>
+            <bling>
+                <class>CompassoUol_Bling_Helper</class>
+            </bling>
+        </helpers>
+        <!-- R E S O U R C E -->
+        <resources>
+            <bling_setup>
+                <setup>
+                    <module>CompassoUol_Bling</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </bling_setup>
+            <bling_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </bling_write>
+            <bling_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </bling_read>
+        </resources>
+        <!-- R E S O U R C E -->
+        <!-- E V E N T S -->
+        <events>
+             <sales_order_place_after>
+                <observers>
+                    <bling_create_order>
+                        <class>bling/observer_order</class>
+                        <method>createBlingOrder</method>
+                    </bling_create_order>
+                </observers>
+            </sales_order_place_after>
+            <sales_order_invoice_pay>
+                <observers>
+                    <bling_create_invoice>
+                        <class>bling/observer_invoice</class>
+                        <method>createBlingInvoice</method>
+                    </bling_create_invoice>
+                </observers>
+            </sales_order_invoice_pay>
+        </events>
+        <!-- E V E N T S -->
+    </global>
+    <!-- G L O B A L S -->
+</config>
