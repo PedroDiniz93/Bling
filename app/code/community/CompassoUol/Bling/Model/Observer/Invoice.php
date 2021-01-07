@@ -34,7 +34,7 @@ class CompassoUol_Bling_Model_Observer_Invoice
                                 $response['retorno']['notasfiscais'][0]['notaFiscal']['idNotaFiscal'];
                         $order->addStatusHistoryComment($commentNfe);
                     } else {
-                        $comment = 'Não foi possivel realizar a nfe na bling <br>' ; ;
+                        $comment = 'Não foi possivel realizar a nfe na bling <br>';
                         $order->addStatusHistoryComment($comment);
                     }
                     $order->save();
