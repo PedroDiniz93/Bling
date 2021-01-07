@@ -33,7 +33,15 @@
     </admin>
     <!-- A D M I N -->
     <!-- R O U T E R S -->
-
+    <adminhtml>
+        <layout>
+            <updates>
+                <bling>
+                    <file>bling.xml</file>
+                </bling>
+            </updates>
+        </layout>
+    </adminhtml>
     <!-- G L O B A L S -->
     <global>
         <models>

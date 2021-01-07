@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_bling_orders_index translate="label">
+        <reference name="head">
+            <action method="addCss"><script>bling/prettify.css</script></action>
+            <action method="addJs">
+                <script>bling/prettify.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="bling/orders" name="admin.bling.orders"/>
+            <block type="adminhtml/template" name="admin.bling.prettify" template="bling/prettify.phtml" />
+        </reference>
+    </adminhtml_bling_orders_index>
+</layout>

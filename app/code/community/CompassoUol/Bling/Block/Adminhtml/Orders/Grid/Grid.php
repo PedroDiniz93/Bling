@@ -3,6 +3,7 @@
 
 use Mage_Adminhtml_Block_Widget_Grid as WidgetGrid;
 use CompassoUol_Bling_Block_Adminhtml_Orders_Renderer_Content as RendererContent;
+use CompassoUol_Bling_Block_Adminhtml_Orders_Renderer_Body as RendererBody;
 
 class CompassoUol_Bling_Block_Adminhtml_Orders_Grid_Grid extends WidgetGrid
 {
@@ -53,6 +54,7 @@ class CompassoUol_Bling_Block_Adminhtml_Orders_Grid_Grid extends WidgetGrid
             'sortable' => true,
             'index' => 'content',
             'type' => 'text',
+            'renderer' => RendererBody::class
         ));
 
         $this->addColumn('created_at', array(
