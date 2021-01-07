@@ -30,8 +30,8 @@ class CompassoUol_Bling_Model_Observer_Invoice
                     $response = json_decode($response, true);
                     if ($response['retorno']['notasfiscais']) {
                         $blingOrder->update($blingOrder, $response);
-                            $commentNfe = 'Foi criado Notafiscal na bling com ID ' .
-                                $response['retorno']['notasfiscais'][0]['notaFiscal']['idNotaFiscal'];
+                        $commentNfe = 'Foi criado Notafiscal na bling com ID ' .
+                            $response['retorno']['notasfiscais'][0]['notaFiscal']['idNotaFiscal'];
                         $order->addStatusHistoryComment($commentNfe);
                     } else {
                         $comment = 'Não foi possivel realizar a nfe na bling <br>';

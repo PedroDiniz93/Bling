@@ -1,4 +1,5 @@
 <?php
+
 use Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract as RendererAbstract;
 
 class CompassoUol_Bling_Block_Adminhtml_Orders_Renderer_Content extends RendererAbstract

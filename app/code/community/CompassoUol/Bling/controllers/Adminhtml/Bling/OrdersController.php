@@ -1,4 +1,5 @@
 <?php
+
 use Mage_Adminhtml_Controller_Action as Action;
 
 class CompassoUol_Bling_Adminhtml_Bling_OrdersController extends Action

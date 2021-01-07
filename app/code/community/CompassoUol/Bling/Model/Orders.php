@@ -48,7 +48,8 @@ class CompassoUol_Bling_Model_Orders extends ModelAbstract
             $blingOrder->setContent(
                 json_encode(
                     array_merge_recursive(
-                        json_decode($blingOrder->getContent(), true), $response
+                        json_decode($blingOrder->getContent(), true),
+                        $response
                     )
                 )
             );

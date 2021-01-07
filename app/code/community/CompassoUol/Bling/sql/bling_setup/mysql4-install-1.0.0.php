@@ -14,7 +14,6 @@ try {
             FOREIGN KEY (`order_id`) REFERENCES `sales_flat_order` (`entity_id`)
         );
     ");
-
 } catch (Exception $e) {
     Mage::log($e->getMessage(), null, __FILE__ . '_setup_exception.log', true);
 } finally {
